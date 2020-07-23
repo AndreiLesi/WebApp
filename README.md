@@ -16,17 +16,17 @@ A description of the task is given in the accompanying  PDF (here you can see wh
 
 3) **Initialize the Database on its first startup (else skip this step):**
 
-- Create an empty database:
+   - Create an empty database:
 
-      docker-compose exec flask python manage.py createDB
+         docker-compose exec flask python manage.py createDB
 
-- Create a dataset with some sample inputs
+   - Create a dataset with some sample inputs
 
-      docker-compose exec flask python manage.py createSampleDB
+        docker-compose exec flask python manage.py createSampleDB
 
 4) **Open your browser and open localhost page to see the application:**
 
-    localhost/
+        localhost/
 
 5) **Play around with it**
 
