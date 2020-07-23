@@ -6,7 +6,7 @@ A description of the task is given in the accompanying  PDF (here you can see wh
 
 1) Install Docker on your machine
 
-2)Open a terminal and build the project (run this comand in this folder):
+2) Open a terminal and build the project (run this comand in this folder):
 
     docker-composes build 
 
