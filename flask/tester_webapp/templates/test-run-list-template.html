@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Test Runner</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../static/css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav class="navbar bg-blue">
+      <a class="navbar-brand" href="#">
+        <img src="../static/images/ionos-logo.png" />
+      </a>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <fieldset>
+            <legend>New request</legend>
+            {% block input %} {% endblock %}
+          </fieldset>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            {% block messages %} {% endblock %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <fieldset>
+            <legend>Test execution requests</legend>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Request ID</th>
+                    <th>Requested By</th>
+                    <th>Created At</th>
+                    <th>Test Env</th>
+                    <th>Test Path</th>
+                    <th>Status</th>
+                    <th>Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% block table %} {% endblock %}
+                </tbody>
+              </table>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer font-small blue pt-4">
+      <hr />
+      <div class="footer-copyright text-center py-3">
+        Copyright © 1&1 IONOS Cloud GmbH 2019
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+{% extends "test-run-list-template.html" %}
+{% block input %}
+  <form method="POST" , action="">
+    {{ form.csrf_token }}
+    <div class="row">
+      <div class="col-md-3 form-group">
+        {% if form.requested_by.errors %}
+          {{ form.requested_by(class = "form-control is-invald") }}
+          <div class="mt-3 ml-1 errors">
+            {% for error in form.requested_by.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+          {{ form.requested_by(class = "form-control", placeholder = 
+          form.requested_by.label.text) }}
+        {% endif %}
+      </div>
+      <div class="col-md-3 form-group">
+        {% if form.env_id.errors %}
+          {{ form.env_id(class = "form-control") }}
+          <div class="mt-3 ml-1 errors">
+            {% for error in form.env_id.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+          {{ form.env_id(class = "form-control", placeholder = 
+          form.env_id.label.text) }}
+        {% endif %}
+      </div>
+      <div class="col-md-4 form-group">
+        {% if form.test_path.errors %}
+          {{ form.test_path(class = "form-control") }}
+          <div class="mt-3 ml-1 errors">
+            {% for error in form.test_path.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+          {{ form.test_path(class = "form-control", placeholder = 
+          form.test_path.label.text) }}
+        {% endif %}
+      </div>
+      <div class="col-md-2">
+          {{ form.submit(class="btn btn-primary", value="Submit" ) }}
+      </div>
+    </div>
+  </form>
+{% endblock input %}
+
+{% block messages %}
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+{% endblock messages %}
+
+{% block table %}
+  {% for row in TableRows %}
+    <tr class={{ row.status.lower() }} >
+      <td>{{ row.request_id  }}</td>
+      <td>{{ row.requested_by  }}</td>
+      <td>{{ row.created_at[0:19]  }}</td>
+      <td>{{ row.env_id  }}</td>
+      <td>{{ row.test_path  }}</td>
+      <td>{{ row.status }}</td>
+      <td>
+        <form method="post" action="test-run-detail.html" class="inline">
+          <input type="hidden" name="requested_by" value={{ row.request_id }}>
+          <button type="submit" name="submit_param" value="submit_value" class="link-button">
+            View Details
+          </button>
+        </form>
+    </td>
+    </tr>
+  {% endfor %}
+{% endblock table %}
+

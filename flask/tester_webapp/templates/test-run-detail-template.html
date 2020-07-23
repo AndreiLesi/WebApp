@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Test Runner</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../static/css/highlight.css" rel="stylesheet" />
+    <link href="../static/css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav class="navbar bg-blue">
+      <a class="navbar-brand" href="#">
+        <img src="../static/images/ionos-logo.png" />
+      </a>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <a class="btn btn-primary float-right" href="/test-run-list.html"
+            >Back</a
+          >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <fieldset>
+            <legend>Test details</legend>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <tbody>
+                  <tr>
+                    <td class="title">ID</td>
+                    <td>17</td>
+                  </tr>
+                  <tr>
+                    <td class="title">Requested by</td>
+                    <td>John</td>
+                  </tr>
+                  <tr>
+                    <td class="title">Env</td>
+                    <td>1</td>
+                  </tr>
+                  <tr>
+                    <td class="title">Path</td>
+                    <td>Tests/test_nics.py</td>
+                  </tr>
+                  <tr class="failed">
+                    <td class="title">Status</td>
+                    <td>FAILED</td>
+                  </tr>
+                  <tr>
+                    <td class="title">Logs</td>
+                    <td>
+                      <pre><code class="python">                         
+Tests/test_nics.py F.                                                                           [100%]
+
+============================================== FAILURES ===============================================
+______________________________________________ test_add _______________________________________________
+
+    def test_add():
+>       assert False
+E       assert False
+
+Tests/test_nics.py:2: AssertionError
+================================= 1 failed, 1 passed in 0.02 seconds ==================================
+                      </code></pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+
+    <footer class="page-footer font-small blue pt-4">
+      <hr />
+      <div class="footer-copyright text-center py-3">
+        Copyright © 1&1 IONOS Cloud GmbH 2019
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </body>
+</html>
