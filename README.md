@@ -20,7 +20,7 @@ A description of the task is given in the accompanying  PDF (here you can see wh
 
          docker-compose exec flask python manage.py createDB
 
-   - Create a dataset with some sample inputs
+  - Create a dataset with some sample inputs
 
         docker-compose exec flask python manage.py createSampleDB
 
@@ -75,5 +75,3 @@ The following tests are available:
 **6) Shut down the application by running the following command in the same terminal:**
 
     docker-compose down
-
-
