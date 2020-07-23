@@ -8,11 +8,11 @@ A description of the task is given in the accompanying  PDF (here you can see wh
 
 2) **Open a terminal and build the project (run this comand in this folder):**
 
-    docker-composes build 
+        docker-composes build 
 
 2) **Start the Application:**
 
-    docker-compose up -d
+        docker-compose up -d
 
 3) **Initialize the Database on its first startup (else skip this step):**
 
