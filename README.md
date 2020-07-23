@@ -4,17 +4,17 @@ A description of the task is given in the accompanying  PDF (here you can see wh
 
 ## How to Use:
 
-1) Install Docker on your machine
+1) **Install Docker on your machine**
 
-2) Open a terminal and build the project (run this comand in this folder):
+2) **Open a terminal and build the project (run this comand in this folder):**
 
     docker-composes build 
 
-2) Start the Application:
+2) **Start the Application:**
 
     docker-compose up -d
 
-3) Initialize the Database on its first startup (else skip this step):
+3) **Initialize the Database on its first startup (else skip this step):**
 
 - Create an empty database:
 
@@ -24,11 +24,11 @@ A description of the task is given in the accompanying  PDF (here you can see wh
 
       docker-compose exec flask python manage.py createSampleDB
 
-4) Open your browser and open localhost page to see the application:
+4) **Open your browser and open localhost page to see the application:**
 
     localhost/
 
-4) Play around with it
+5) **Play around with it**
 
 The following tests are available:
   
@@ -72,7 +72,7 @@ The following tests are available:
         Requester: Jonas, Environment ID: 7, Test Path: Tests/TrueTest
       
 
-5) Shut down the application by running the following command in the same terminal:
+**6) Shut down the application by running the following command in the same terminal:**
 
     docker-compose down
 
